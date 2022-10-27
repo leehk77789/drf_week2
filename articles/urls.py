@@ -2,6 +2,6 @@ from django.urls import path
 from articles import views
 
 urlpatterns = [
-    path("", views.articleAPI, name="articleAPI"),
-    path("<int:article_id>", views.articleDetailApi, name="articleDetailApi"),
+    path("", views.ArticleList.as_view(), name="index"),
+    path("<int:article_id>/", views.ArticleDetail.as_view() , name="articleDetailApi"),
 ]
